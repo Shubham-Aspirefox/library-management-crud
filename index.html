@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Test</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container mt-3 mb-5">
+    <div class="row" id="bookCard"></div>
+    <div id="showAlert" class="mt-5 mb-5">
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong></strong>
+      </div>
+    </div>
+    <div class="row mt-5" id="displayTable">
+
+
+
+      <!-- modal -->
+      <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-primary mb-5" data-bs-toggle="modal" data-bs-target="#exampleModal"
+          id="bigModal">
+          Add Borrower
+        </button>
+
+        <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                  Borrow Book
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <form id="formID">
+                  <div class="row">
+                    <div class="mb-3 col-6">
+                      <label for="inputText" class="col-form-label">Name</label>
+                      <input type="text" class="form-control fields" name="Name" />
+                    </div>
+                    <div class="mb-3 col-6">
+                      <label for="inputText" class="col-form-label">Phone No</label>
+                      <input type="number" class="form-control fields" name="Phone" />
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputText" class="col-form-label">Age</label>
+                    <input type="number" class="form-control fields" name="DOB" />
+                    <p id="DOB"></p>
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputText" class="col-form-label">Books</label>
+                    <select name="Books" id="booksDropdown" class="form-select booksDropdown">
+                      <option selected>Books</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputText" class="col-form-label">Total Price</label>
+                    <input type="text" class="form-control totalPrice fields" name="" id="totalPrice" value=""
+                      disabled />
+                  </div>
+                  <div class="mb-3">
+                    <label for="inputText" class="col-form-label">Address</label>
+                    <input type="text" class="form-control fields" name="Address" />
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                    <!-- change to submit -->
+                    <button type="submit" class="btn btn-primary" id="addBtn">
+                      Add New
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- modal end -->
+      <table class="table" id="tableId">
+        <thead class="text-center" id="thead">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Age</th>
+            <th scope="col">Total Price</th>
+            <th scope="col">Address</th>
+            <th scope="col">ID</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="text-center" id="tbody"></tbody>
+      </table>
+    </div>
+  </div>
+  <!-- Add new Book and Return book modal -->
+  <div>
+    <div>
+      <div class="modal fade" id="addNew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add New Book</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="addNewModalForm">
+                <div class="mb-3">
+                  <label for="inputText" class="col-form-label">Name</label>
+                  <select name="books" class="form-select booksDropdown" id="addNewBooks">
+                    <option selected>Books</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="inputText" class="col-form-label">Total Price</label>
+                  <input type="text" class="form-control totalPrice" name="fields" id="addTotalPrice" value=""
+                    disabled />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" id="addNewBtn" data-bs-dismiss="modal">
+                Add New
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="modal fade" id="removeNew" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Remove Book</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="addNewModalForm">
+                <div class="mb-3">
+                  <label for="inputText" class="col-form-label">Name</label>
+                  <select name="books" class="form-select booksDropdown" id="removeNewBooks">
+                    <option selected>Books</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="inputText" class="col-form-label">Total Price</label>
+                  <input type="text" class="form-control totalPrice" name="fields" id="subtractTotalPrice" value=""
+                    disabled />
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Close
+              </button>
+              <button type="button" class="btn btn-primary" id="removeBtn" data-bs-dismiss="modal">
+                Remove
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+  <script src="./app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+[
+    {
+      "bookId": 1,
+      "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/411GefBtqfL._SX327_BO1,204,203,200_.jpg",
+      "Name": "Book 1",
+      "Author": "Author 1",
+      "Category": "Horror",
+      "Rating": 5,
+      "QuantityAvailable": 10,
+      "Price": 10,
+      "PublishedYear": "2010",
+      "Address": "Address 1"
+    },
+    {
+      "bookId": 2,
+      "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/411GefBtqfL._SX327_BO1,204,203,200_.jpg",
+      "Name": "Book 2",
+      "Author": "Author 2",
+      "Category": "Fanstasy",
+      "Rating": 5,
+      "QuantityAvailable": 10,
+      "Price": 20,
+      "PublishedYear": "2010",
+      "Address": "Address 2"
+    },
+    {
+      "bookId": 3,
+      "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/411GefBtqfL._SX327_BO1,204,203,200_.jpg",
+      "Name": "Book 3",
+      "Author": "Author 3",
+      "Category": "Sci-Fi",
+      "Rating": 5,
+      "QuantityAvailable": 10,
+      "Price": 30,
+      "PublishedYear": "2010",
+      "Address": "Address 3"
+    },
+    {
+      "bookId": 4,
+      "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/411GefBtqfL._SX327_BO1,204,203,200_.jpg",
+      "Name": "Book 4",
+      "Author": "Author 4",
+      "Category": "Melodrama",
+      "Rating": 5,
+      "QuantityAvailable": 10,
+      "Price": 40,
+      "PublishedYear": "2010",
+      "Address": "Address 4"
+    },
+    {
+      "bookId": 5,
+      "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/411GefBtqfL._SX327_BO1,204,203,200_.jpg",
+      "Name": "Book 5",
+      "Author": "Author 5",
+      "Category": "Romance",
+      "Rating": 5,
+      "QuantityAvailable": 10,
+      "Price": 50,
+      "PublishedYear": "2010",
+      "Address": "Address 5"
+    },
+    {
+      "bookId": 6,
+      "imgUrl": "https://images-na.ssl-images-amazon.com/images/I/411GefBtqfL._SX327_BO1,204,203,200_.jpg",
+      "Name": "Book 6",
+      "Author": "Author 6",
+      "Category": "Romance",
+      "Rating": 5,
+      "QuantityAvailable": 10,
+      "Price": 50,
+      "PublishedYear": "2010",
+      "Address": "Address 5"
+    }
+   
+]

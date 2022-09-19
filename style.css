@@ -1,0 +1,53 @@
+p{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+#fullCard{
+    padding: 10px;
+    margin-right: 20px;
+    background-color: #FFFFDE;
+    padding-bottom: 15px;
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+#fullCard:hover{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* #cardBody{
+    padding: 20px;
+
+} */
+table.dataTable thead th{
+    text-align: center !important;
+}
+
+table.dataTable thead>tr>th.sorting_desc{
+    display: none;
+}
+
+.sorting_1{
+    display: none;
+}
+
+#thead{
+    background-color: #E0DECA;
+}
+
+#tbody tr:nth-child(odd){
+    background-color:#FCF8E8 ;
+}
+#tbody tr:nth-child(odd):hover{
+    background-color:#ECE5C7 ;
+}
+
+#tbody tr:nth-child(even){
+    background-color:#EEEEEE ;
+}
+#tbody tr:nth-child(even):hover{
+    background-color:#CDC2AE ;
+}
+.error{
+    color: red;
+}
+
+
